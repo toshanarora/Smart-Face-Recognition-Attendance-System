@@ -1,0 +1,35 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Runtime-generated data (do not ship personal biometric data in the repo)
+data/dataset/*
+!data/dataset/.gitkeep
+data/trained_model/*.yml
+data/trained_model/*.json
+!data/trained_model/.gitkeep
+data/attendance.db
+data/sample_faces/
+
+# Outputs / reports / logs generated at runtime
+outputs/
+reports/*.csv
+reports/*.png
+!reports/.gitkeep
+logs/*.log
+!logs/.gitkeep
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Pytest
+.pytest_cache/
+.coverage

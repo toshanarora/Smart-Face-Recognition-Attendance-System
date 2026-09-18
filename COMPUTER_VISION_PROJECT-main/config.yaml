@@ -1,0 +1,35 @@
+# ==========================================================
+# Configuration for the Face Recognition Attendance System
+# ==========================================================
+
+paths:
+  dataset_dir: "data/dataset"
+  model_dir: "data/trained_model"
+  model_file: "data/trained_model/lbph_model.yml"
+  labels_file: "data/trained_model/labels.json"
+  db_file: "data/attendance.db"
+  reports_dir: "reports"
+  log_file: "logs/app.log"
+  output_dir: "outputs"
+
+detection:
+  # Haar Cascade shipped with OpenCV is loaded automatically via cv2.data.haarcascades
+  cascade_name: "haarcascade_frontalface_default.xml"
+  scale_factor: 1.1
+  min_neighbors: 5
+  min_size: [60, 60]
+
+capture:
+  face_size: [200, 200]          # width, height each face is normalized to before training
+  samples_per_person: 30         # number of face samples captured during enrollment
+
+recognition:
+  confidence_threshold: 75.0     # LBPH distance - LOWER is a better match; predictions above this are "Unknown"
+
+attendance:
+  mark_once_per_day: true
+
+logging:
+  level: "INFO"
+  max_bytes: 1048576
+  backup_count: 3
